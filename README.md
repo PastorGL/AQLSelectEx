@@ -69,4 +69,4 @@ reference.setPredExp(// 20 expressions in RPN
 So, the main point of this project is code readability and maintainability. It is much easier to write and manage a couple of SQL SELECTs
 rather than a nearly non-comprehencible walls of PredExp calls in RPN.
 
-For full syntax (in ANTLR4 notation) please refer to [grammar file](./AQLSelectEx/src/main/antlr4/io/github/pastorgl/aqlselectex/AQLSelectEx.g4).
+For full syntax (in ANTLR4 notation) please refer to [grammar file](./src/main/antlr4/io/github/pastorgl/aqlselectex/AQLSelectEx.g4).
