@@ -313,7 +313,7 @@ public class ParseSelectExTest {
     }
 
     private void assertStatementEquals(Statement reference, Statement statement, int size) {
-        Command command = new Command() {
+        Command command = new Command(0, 0, 0) {
             @Override
             protected void sizeBuffer() {
             }
@@ -322,11 +322,11 @@ public class ParseSelectExTest {
         byte[] ref;
         buf = new byte[size];
         command.dataBuffer = buf;
-        command.setQuery(new QueryPolicy(), statement, false);
+        command.setQuery(new QueryPolicy(), statement, false, null);
 
         ref = new byte[size];
         command.dataBuffer = ref;
-        command.setQuery(new QueryPolicy(), reference, false);
+        command.setQuery(new QueryPolicy(), reference, false, null);
 
         assertArrayEquals(Arrays.copyOfRange(ref, MSG_TOTAL_HEADER_SIZE, size), Arrays.copyOfRange(buf, MSG_TOTAL_HEADER_SIZE, size));
     }
